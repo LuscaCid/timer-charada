@@ -3,10 +3,9 @@
 const AlreadyOpened = localStorage.getItem("@Already-opened");
 const alreadyOpened = true;
 const inputPassword = document.querySelector('#password');
-localStorage.setItem("Already-opened", JSON.stringify(alreadyOpened));
-if (AlreadyOpened) {
-    alert('nao era pra vc ter feito isso');
-}
+localStorage.setItem("@Already-opened", JSON.stringify(alreadyOpened));
+const jaAberto = localStorage.getItem("@Already-opened");
+console.log(jaAberto);
 let amountSecondsPassed = 0;
 const displayHours = document.getElementById('hour');
 const displayMinutes = document.getElementById('minutes');
@@ -34,7 +33,12 @@ let interval = setInterval(() => {
     alterTiming(hours, minutes, seconds);
     document.title = `${hours}:${minutes}:${seconds} `;
 }, 1000);
-const passowrdEnigma = "edwardnigma";
+let passowrdEnigma = "edwardnigma";
+if (jaAberto == 'true') {
+    alert('nao era pra vc ter feito isso');
+    clearInterval(interval);
+    passowrdEnigma = " sdnjkl322hyikujkanjkl3231dnjkasdn321kjasdnjkasdnjkasdnajksdnjkas2312njkasdnjksad";
+}
 const sendFormButton = document.querySelector('.send');
 const congratsDiv = document.querySelector('.code');
 const form = document.getElementById('getpassword');

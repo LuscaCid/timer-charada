@@ -4,11 +4,10 @@ const AlreadyOpened = localStorage.getItem("@Already-opened")
 
 const alreadyOpened = true
 const inputPassword = document.querySelector<HTMLInputElement>('#password')
-localStorage.setItem("Already-opened", JSON.stringify(alreadyOpened))
-if(AlreadyOpened) {
-  alert('nao era pra vc ter feito isso')
-  
-}
+localStorage.setItem("@Already-opened", JSON.stringify(alreadyOpened))
+const jaAberto = localStorage.getItem("@Already-opened")
+console.log(jaAberto)
+
 let amountSecondsPassed : number = 0;
 
 const displayHours = document.getElementById('hour')
@@ -26,7 +25,6 @@ console.log(displayHours)
 let interval = setInterval(() => {
   amountSecondsPassed++
   
-
   const totalSeconds = 3 * 60 * 60
   const currentSeconds = totalSeconds - amountSecondsPassed 
 
@@ -47,8 +45,12 @@ let interval = setInterval(() => {
   document.title = `${hours}:${minutes}:${seconds} `
 }, 1000)
 
-const passowrdEnigma = "edwardnigma"
-
+let passowrdEnigma = "edwardnigma"
+if(jaAberto == 'true') {
+  alert('nao era pra vc ter feito isso')
+  clearInterval(interval)
+  passowrdEnigma =" sdnjkl322hyikujkanjkl3231dnjkasdn321kjasdnjkasdnjkasdnajksdnjkas2312njkasdnjksad"
+}
 
 const sendFormButton = document.querySelector<HTMLButtonElement>('.send')
 const congratsDiv = document.querySelector<HTMLDivElement>('.code')
