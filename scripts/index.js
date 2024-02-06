@@ -32,6 +32,7 @@ let interval = setInterval(() => {
     if (hoursAmount == 0 && minutesAmount == 0 && secondsAmount == 0)
         return window.alert('seu tempo acabou');
     alterTiming(hours, minutes, seconds);
+    document.title = `${hours}:${minutes}:${seconds} `;
 }, 1000);
 const passowrdEnigma = "edwardnigma";
 const sendFormButton = document.querySelector('.send');
