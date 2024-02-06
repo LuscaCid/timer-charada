@@ -38,7 +38,7 @@ body, button, input, textarea {
   align-items: center;
   justify-content: center;
   border-radius: .7rem;
-  width: min(23rem, 90%) ;
+  width: min(36rem, 90%) ;
   .temp{
     color: white;
 
@@ -55,6 +55,7 @@ body, button, input, textarea {
 }
 
 .input-wrapper{
+  width: 100%;
   display: flex;
   gap: .4rem;
   flex-direction: row;
@@ -65,6 +66,7 @@ body, button, input, textarea {
     border: 2px solid var(--primary-color);
     padding: .3rem .5rem;
     color: #ffffff70;
+    width: 100%;
   }
 }
 .send{
