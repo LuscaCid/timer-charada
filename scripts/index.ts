@@ -4,9 +4,7 @@ const AlreadyOpened = localStorage.getItem("@Already-opened")
 
 const alreadyOpened = true
 const inputPassword = document.querySelector<HTMLInputElement>('#password')
-localStorage.setItem("@Already-opened", JSON.stringify(alreadyOpened))
-const jaAberto = localStorage.getItem("@Already-opened")
-console.log(jaAberto)
+
 
 let amountSecondsPassed : number = 0;
 
